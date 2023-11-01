@@ -1,0 +1,127 @@
+/* BloodSugarLevelQuestion.css */
+.body{
+  background-color: rgb(46, 199, 188);
+  height: 590px;
+}
+.blood-sugar-question-container {
+  background-color: rgb(166, 222, 214);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 5% 10%; /* Adjust the padding as needed */
+  width: 79vw; /* 80% of the viewport width */
+   /* Limit the maximum width */
+  margin: 0 auto; /* Center the container horizontally */
+  color: rgb(0, 0, 0);
+  height: 485px;
+}
+
+.blood-sugar-question-container h1 {
+  font-size: 50px;
+  margin-bottom: 5px;
+  color: #000000;
+}
+.blood-sugar-question-container h3 {
+  font-size: 35px;
+  margin-bottom: 45px;
+  font-style: italic;
+  color: #000000;
+}
+
+.sugar-level-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.sugar-level-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  margin-top: 20px;
+}
+
+.centered-sugar-level-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.sugar-level-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sugar-level-option input[type="radio"] {
+  margin-right: 5px;
+}
+
+.sugar-level-option.selected {
+  background-color: #004956;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.selected {
+  background-color: #04515a;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.navigation-buttons1 {
+  display:flex;
+  justify-content:center;
+  margin-top: 20px;
+}
+.navigation-buttons2 {
+  display:flex;
+  justify-content:center;
+  margin-top: 20px;
+}
+.navigation-button {
+  background-color: #054b55;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 20px 40px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 10px; /* Add margin between buttons */
+}
+
+.navigation-button:hover {
+  background-color: #08f3ef;
+}
+.logo-image {
+  height:150px;
+  width: 250px;
+  position: absolute;
+  bottom: 10px;
+  left: 1225px;
+  
+}
+
+.Db{
+  height:420px;
+  width: 420px;
+  position: absolute;
+  bottom: 90px;
+  left: 40px;
+  
+}
+
+
+.home-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.home-button img {
+  width: 30px;
+  height: 30px;
+}
