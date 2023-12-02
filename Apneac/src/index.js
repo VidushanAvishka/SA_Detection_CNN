@@ -2,13 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 //import {Route } from "react-router-dom";
 import App from './App';
+import PAGE from './components/page'
 import reportWebVitals from './reportWebVitals';
 import GQ from './components/GenderQuestion'
-//import AG from '/components/AgeQuestion'
+import AQ from './components/AgeQuestion'
+import NQ from './components/NeckQuestion'
+import SQ from './components/SnoreQuestion'
+import TQ from './components/TiredQuestion'
+import OQ from './components/ObsQuestion'
+import PQ from './components/PreQuestion'
 import BQ from './components/BMIQuestion'
-import BSQ from './components/BloodSugarLevelQuestion';
-//import BPQ from './components/BloodPressureLevelPage'
+import SBR from './components/StopBangresult'
 import T from './components/test'
+import { GlobalProvider } from './GlobalContext';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -23,33 +29,63 @@ const router = createBrowserRouter([
     path: "/gq",
     element: <GQ/>,
   },
-  // {
-  //   path: "/ag",
-  //   element: <AG/>,
-  // },
+
   {
     path: "/bq",
     element: <BQ/>,
   },
-  {
-    path: "/bsq",
-    element: <BSQ/>,
-  },
-  // {
-  //   path: "/bpq",
-  //   element: <BPQ/>,
-  // },
+  
   {
     path: "/t",
     element: <T/>,
+  },
+
+  {
+    path: "/page",
+    element: <PAGE/>,
+  },
+
+  {
+    path: "/aq",
+    element: <AQ/>,
+  },
+
+  {
+    path: "/nq",
+    element: <NQ/>,
+  },
+
+  {
+    path: "/sq",
+    element: <SQ/>,
+  },
+
+  {
+    path: "/tq",
+    element: <TQ/>,
+  },
+
+  {
+    path: "/oq",
+    element: <OQ/>,
+  },
+  
+  {
+    path: "/pq",
+    element: <PQ/>,
+  },
+  {
+    path: "/sbr",
+    element: <SBR/>,
   },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <GlobalProvider>
     <RouterProvider router={router} />
-    
+    </GlobalProvider>
   </React.StrictMode>
 );
 

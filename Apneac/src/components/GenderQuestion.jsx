@@ -1,67 +1,67 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import girl from '../images/girl.png';
 import boy from '../images/boy.png';
-import './GenderQuestion.css'; // Import the CSS file for styling
+import './GenderQuestion.css';
 import logoImage from '../images/Newlogo.png';
-import home from '../images/Home.png'
+import { useGlobalContext } from '../GlobalContext.js';
+ 
 function GenderQuestion() {
   const [selectedGender, setSelectedGender] = useState(null);
-
-  const handleGenderChange = (event) => {
-    setSelectedGender(event.target.value);
+  const { globalArray, updateGlobalArrayAtIndex } = useGlobalContext();
+  const navigate = useNavigate();
+ 
+  const handleGenderChange = (gender) => {
+    setSelectedGender(gender);
   };
-
+ 
+  const addItem = () => {
+    if (selectedGender) {
+      globalArray[0] = selectedGender === 'Male' ? 'Yes' : 'No';
+      console.log(globalArray);
+      updateGlobalArrayAtIndex(0, globalArray[0]);
+      navigate('/aq', { state: { array: globalArray } });
+    }
+  };
+ 
+  const goToHome = () => {
+    navigate('/');
+  };
+ 
   return (
-    
-   <div >
-  <img src={logoImage} alt="Logo" className="logo-image" /> {/* Add the logo image */}
+<div className="gender-question-container">
+<img src={logoImage} alt="Logo" className="logo-image" />
+<h4 className="gender-question-containerh1">What is your Gender?</h4>
+ 
+      <div className="gender-option" onClick={() => handleGenderChange('Female')}>
+<img src={girl} alt="Female" className="gender-image" />
+<input type="radio" name="gender" value="Female" checked={selectedGender === 'Female'} readOnly />
+<label>Female</label>
+</div>
+ 
+      <div className="gender-option" onClick={() => handleGenderChange('Male')}>
+<img src={boy} alt="Male" className="gender-image" />
+<input type="radio" name="gender" value="Male" checked={selectedGender === 'Male'} readOnly />
+<label>Male</label>
+</div>
+ 
+      {selectedGender && <p>You selected: {selectedGender}</p>}
+ 
+      <div className="next-button-containerg">
+<Link to="/page">        
+<button className="next-button" onClick={goToHome} style={{ marginRight: '12px' }}>
+          Back to Home
+</button>
+</Link>
+<Link to="/aq">
+<button className="next-button" onClick={addItem} disabled={!selectedGender} style={{ marginLeft: '22px' }}>
+          Next
+</button>
+</Link>
 
-    <div className="gender-question-container">
-    <div className="home-button">
-        <a href="/">
-          <img src={home} alt="Home" />
-        </a>
-       </div>
-
-      <h1 className='gender-question-containerh1'>What is your Gender?</h1>
-      <div className="radio-container">
-      <img src={girl} alt="Female" className="gender-image" /><br/>
-        <label className="radio-label">
-          <input
-            type="radio"
-            value="Female"
-            checked={selectedGender === "Female"}
-            onChange={handleGenderChange}
-          />
-         
-          Female
-        </label>
-        <img src={boy} alt="Male" className="gender-image" />
-        <label className="radio-label">
-          <input
-            type="radio"
-            value="Male"
-            checked={selectedGender === "Male"}
-            onChange={handleGenderChange}
-          />
-          
-          Male
-        </label>
-      </div>
-      {selectedGender && (
-        <p>You selected: {selectedGender}</p>
-      )}<br/><br/><br/>
-<div className="next-button-container">
-          
-          <a href="/bq"><button className="next-button" >
-            Next
-          </button></a>
-        </div>
-        </div>
-    </div>
-
-    
+</div>
+</div>
   );
 }
-
+ 
 export default GenderQuestion;

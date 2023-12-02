@@ -1,103 +1,82 @@
 /* GenderQuestion.css */
 
-  
-  .gender-question-container {
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: -26px;
-    width: 99.5vw;
-    height: 640px;
-    color: rgb(0, 0, 0);
-    
-  }
-  
-  .gender-question-container h1 {
-    font-size: 50px;
-    color: rgb(8, 8, 8);
-  }
-  
-  .radio-container {
-    display: flex;
-    gap: 30px;
-    margin-top: 100px;
-    font-size: 25px;
-  }
-  
-  .radio-oval {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    
-  }
-  
-  .radio-label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-    text-align: center;
-    z-index: 1; /* Ensure the label text is above the oval */
-    
-  }
-  
-  .radio-label::before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: -10px;
-    right: -10px;
-    bottom: -5px;
-    border: 2px solid white;
-    border-radius: 50%;
-    display: block;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-  }
-  
-  .radio-label.selected::before {
-    opacity: 1;
-  }
-  
-  .gender-image {
-    height: 500px;
-    width: 500px;
-    border-radius: 50%;
-    border-color: rgb(255, 255, 255);
-    border-width: thick;
-    overflow: hidden;
-    margin-top: 10px;
-  }
-  
-  .logo-image {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    bottom: 1px;
-    left: 10px;
-    
-  }
-  
-  .next-button {
-    background-color: #007771;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 50px;
-  }
-  .home-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-  }
-  
-  .home-button img {
-    width: 30px;
-    height: 30px;
-  }
-  
+.gender-question-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f4; /* Light gray background */
+}
+
+.logo-image {
+  max-width: 100px; /* Adjust the width as needed */
+  margin-bottom: 20px;
+}
+
+.gender-question-container h4 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #333; /* Dark text color */
+}
+
+.gender-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.gender-image {
+  max-width: 80px; /* Adjust the width as needed */
+  margin-bottom: 10px;
+}
+
+/* Styling for radio buttons (hide them visually) */
+.gender-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Styling for the label to mimic the appearance of radio buttons */
+.gender-option label {
+  cursor: pointer;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Change background color when label is hovered or selected */
+.gender-option label:hover,
+.gender-option input[type="radio"]:checked + label {
+  background-color: #e6e6e6;
+}
+
+.selected-gender {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333; /* Dark text color */
+}
+
+.next-button-containerg {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.next-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #4caf50; /* Green button color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.next-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

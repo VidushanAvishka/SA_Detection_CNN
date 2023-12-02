@@ -1,77 +1,67 @@
 .App {
-    text-align: center;
-    background-color: hsl(178, 72%, 30%);
+  text-align: center;
+  background-color: hsl(178, 72%, 30%);
+}
+
+/* Container holding the image and the text */
+.containerx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.text-block {
+  position: absolute;
+  bottom: -70px;
+  right: 550px;
+  background-color: rgba(20, 13, 159, 0);
+  color: rgb(0, 0, 0);
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.stylish-button {
+  background-color: hsl(0, 0%, 100%);
+  color: rgb(0, 0, 0);
+  font-family: 'Lucida Sans';
+  font-size: 2em;
+  padding: 15px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.header {
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+  margin-top: 500px;
+}
+
+.header-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro-video {
+  width: 100%;
+  height: 100%;
+}
+
+.welcome-text {
+  font-size: 3em;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    height: 30vh;
   }
 
- /* Container holding the image and the text */
-.container {
-    position: relative;
+  .stylish-button {
+    font-size: 1.5em;
+    padding: 10px 5px;
   }
-  
-  /* Bottom right text */
-  .text-block {
-    position: absolute;
-    bottom: -70px;
-    right: 550px;
-    background-color: rgba(20, 13, 159, 0);
-    color: rgb(0, 0, 0);
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-  .my-button{
-    border-radius: 50px;
-    border: 10px solid #ffffff;
-    padding: 50px 50px;
-    background: rgb(136, 16, 88);
-    font-size: 1.9em;
-    font-family:'Times New Roman', Times, serif;
-    font-style: italic;
-    cursor: pointer;}
-
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      /*height: 200vh;*/
-      background-color: hsl(0, 60%, 41%);
-    }
-    
-    .box {
-      width: 1200px;
-      height: 1000px;
-      align-items: first baseline;
-      background-color: #129f5f;
-      font-size: medium;
-      border: 6px solid #ffffff;
-      padding: 20px;
-    }
-
-    .stylish-button {
-      background-color: hsl(0, 0%, 100%);
-      color: rgb(0, 0, 0);
-      font-family:'Lucida Sans';
-      font-size: 2.9em;
-      padding: 30px 20px;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .header {
-      position: relative; /* To allow positioning within the header */
-      height: 100%; /* Set the desired height */
-      overflow: hidden; /* Hide any overflow if the video is larger than the header */
-      }
-      
-      .header-video {
-      width: 100%; /* Set the width to 100% to ensure it covers the header's width */
-      height: 100%; /* Set the height to 100% to maintain aspect ratio */
-      object-fit: cover; /* Maintain aspect ratio and cover the available space */
-      }
-
-      
-      .intro-video {
-        width: 100%; /* Set the width to 100% to ensure it covers the header's width */
-        height: 100%; /* Set the height to 100% to maintain aspect ratio */
-        
-        }
+}

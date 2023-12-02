@@ -8,8 +8,8 @@ import pickle
 with open('models/cnnmodel.pickle' , 'rb')as f:
  model=pickle.load(f)
 
-all_file_path=glob('temp_folder/*.edf')
-file_path=all_file_path[0]
+# all_file_path=glob('temp_folder/*.edf')
+# file_path=all_file_path[0]
 
 def read_data(file_path_):
     datax=mne.io.read_raw_edf(file_path_,preload=True)
@@ -38,6 +38,6 @@ def get_prediction(file_path):
        print("Output:", output)
     return output
 
-output = get_prediction(file_path)
+# output = get_prediction(file_path)
 
 
